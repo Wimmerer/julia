@@ -166,7 +166,7 @@ ambs = detect_ambiguities(Ambig5)
 @test length(ambs) == 2
 
 
-using LinearAlgebra, SparseArrays, SuiteSparse
+using LinearAlgebra
 
 # Test that Core and Base are free of ambiguities
 # not using isempty so this prints more information when it fails
@@ -186,7 +186,7 @@ using LinearAlgebra, SparseArrays, SuiteSparse
     end
 
     STDLIB_DIR = Sys.STDLIB
-    STDLIBS = filter!(x -> x != "LinearAlgebra" && x != "SparseArrays" && # Some packages run this test themselves
+    STDLIBS = filter!(x -> x != "LinearAlgebra" && # Some packages run this test themselves
                            isfile(joinpath(STDLIB_DIR, x, "src", "$(x).jl")),
                       readdir(STDLIB_DIR))
 

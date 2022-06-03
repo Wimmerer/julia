@@ -24,7 +24,7 @@ CLANG_TRIPLETS=$(filter %-darwin %-freebsd,$(TRIPLETS))
 NON_CLANG_TRIPLETS=$(filter-out %-darwin %-freebsd,$(TRIPLETS))
 
 # These are the projects currently using BinaryBuilder; both GCC-expanded and non-GCC-expanded:
-BB_PROJECTS=mbedtls libssh2 nghttp2 mpfr curl libgit2 pcre libuv unwind llvmunwind dsfmt objconv p7zip zlib libsuitesparse openlibm blastrampoline
+BB_PROJECTS=mbedtls libssh2 nghttp2 mpfr curl libgit2 pcre libuv unwind llvmunwind dsfmt objconv p7zip zlib openlibm blastrampoline
 BB_GCC_EXPANDED_PROJECTS=openblas csl
 BB_CXX_EXPANDED_PROJECTS=gmp llvm clang llvm-tools
 # These are non-BB source-only deps
@@ -103,9 +103,6 @@ pack-checksum-llvm: | checksum-llvm-tools
 pack-checksum-csl: | pack-checksum-compilersupportlibraries
 	@# nothing to do but disable the prefix rule
 pack-checksum-compilersupportlibraries: | checksum-csl
-pack-checksum-libsuitesparse: | pack-checksum-suitesparse
-	@# nothing to do but disable the prefix rule
-pack-checksum-suitesparse: | checksum-libsuitesparse
 # This is a bit tricky: we want llvmunwind to be separate from unwind and llvm,
 # so we add a rule to process those first
 pack-checksum-llvm pack-checksum-unwind: | pack-checksum-llvmunwind

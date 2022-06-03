@@ -177,7 +177,6 @@ uses are listed in [`deps/Versions.make`](https://github.com/JuliaLang/julia/blo
 - **[OpenBLAS]**             — fast, open, and maintained [basic linear algebra subprograms (BLAS)]
 - **[LAPACK]**               — library of linear algebra routines for solving systems of simultaneous linear equations, least-squares solutions of linear systems of equations, eigenvalue problems, and singular value problems.
 - **[MKL]** (optional)       – OpenBLAS and LAPACK may be replaced by Intel's MKL library.
-- **[SuiteSparse]**          — library of linear algebra routines for sparse matrices.
 - **[PCRE]**                 — Perl-compatible regular expressions library.
 - **[GMP]**                  — GNU multiple precision arithmetic library, needed for `BigInt` support.
 - **[MPFR]**                 — GNU multiple precision floating point library, needed for arbitrary precision floating point (`BigFloat`) support.
@@ -206,7 +205,6 @@ uses are listed in [`deps/Versions.make`](https://github.com/JuliaLang/julia/blo
 [OpenBLAS]:     https://github.com/xianyi/OpenBLAS
 [LAPACK]:       https://www.netlib.org/lapack
 [MKL]:          https://software.intel.com/en-us/articles/intel-mkl
-[SuiteSparse]:  https://people.engr.tamu.edu/davis/suitesparse.html
 [PCRE]:         https://www.pcre.org
 [LLVM]:         https://www.llvm.org
 [LLVM libunwind]: https://github.com/llvm/llvm-project/tree/main/libunwind

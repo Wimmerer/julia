@@ -234,14 +234,6 @@ $(eval $(call symlink_system_library,LIBSSH2,libssh2))
 $(eval $(call symlink_system_library,NGHTTP2,libnghttp2))
 $(eval $(call symlink_system_library,CURL,libcurl))
 $(eval $(call symlink_system_library,LIBGIT2,libgit2))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libamd))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libcamd))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libccolamd))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libcholmod))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libcolamd))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libumfpack))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libspqr))
-$(eval $(call symlink_system_library,LIBSUITESPARSE,libsuitesparseconfig))
 # EXCLUDED LIBRARIES (installed/used, but not vendored for use with dlopen):
 # libunwind
 endif # WINNT

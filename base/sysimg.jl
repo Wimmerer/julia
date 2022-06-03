@@ -51,14 +51,11 @@ let
         :InteractiveUtils,
         :LibGit2,
         :Profile,
-        :SparseArrays,
         :UUIDs,
 
         # 3-depth packages
         :REPL,
         :SharedArrays,
-        :Statistics,
-        :SuiteSparse,
         :TOML,
         :Test,
 

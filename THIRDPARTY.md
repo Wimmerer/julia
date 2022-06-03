@@ -37,7 +37,6 @@ Julia's `stdlib` uses the following external libraries, which have their own lic
 - [OPENBLAS](https://raw.github.com/xianyi/OpenBLAS/master/LICENSE) [BSD-3]
 - [LAPACK](https://netlib.org/lapack/LICENSE.txt) [BSD-3]
 - [PCRE](https://www.pcre.org/licence.txt) [BSD-3]
-- [SUITESPARSE](https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/master/LICENSE.txt) [mix of LGPL2+ and GPL2+; see individual module licenses]
 - [LIBBLASTRAMPOLINE](https://github.com/staticfloat/libblastrampoline/blob/main/LICENSE) [MIT]
 - [NGHTTP2](https://github.com/nghttp2/nghttp2/blob/master/COPYING) [MIT]
 

@@ -54,7 +54,6 @@ USE_SYSTEM_BLAS:=0
 USE_SYSTEM_LAPACK:=0
 USE_SYSTEM_GMP:=0
 USE_SYSTEM_MPFR:=0
-USE_SYSTEM_LIBSUITESPARSE:=0
 USE_SYSTEM_LIBUV:=0
 USE_SYSTEM_UTF8PROC:=0
 USE_SYSTEM_MBEDTLS:=0
@@ -1149,7 +1148,7 @@ LIBGFORTRAN_VERSION := $(subst libgfortran,,$(filter libgfortran%,$(subst -,$(SP
 # Note: we explicitly _do not_ define `CSL` here, since it requires some more
 # advanced techniques to decide whether it should be installed from a BB source
 # or not.  See `deps/csl.mk` for more detail.
-BB_PROJECTS := BLASTRAMPOLINE OPENBLAS LLVM LIBSUITESPARSE OPENLIBM GMP MBEDTLS LIBSSH2 NGHTTP2 MPFR CURL LIBGIT2 PCRE LIBUV LIBUNWIND DSFMT OBJCONV ZLIB P7ZIP
+BB_PROJECTS := BLASTRAMPOLINE OPENBLAS LLVM OPENLIBM GMP MBEDTLS LIBSSH2 NGHTTP2 MPFR CURL LIBGIT2 PCRE LIBUV LIBUNWIND DSFMT OBJCONV ZLIB P7ZIP
 define SET_BB_DEFAULT
 # First, check to see if BB is disabled on a global setting
 ifeq ($$(USE_BINARYBUILDER),0)
@@ -1168,8 +1167,8 @@ $(foreach proj,$(BB_PROJECTS),$(eval $(call SET_BB_DEFAULT,$(proj))))
 
 # Warn if the user tries to build something that requires `gfortran` but they don't have it installed.
 ifeq ($(FC_VERSION),)
-ifneq ($(USE_BINARYBUILDER_OPENBLAS)$(USE_BINARYBUILDER_LIBSUITESPARSE),11)
-$(error "Attempting to build OpenBLAS or SuiteSparse without a functioning fortran compiler!")
+ifneq ($(USE_BINARYBUILDER_OPENBLAS),1)
+$(error "Attempting to build OpenBLAS without a functioning fortran compiler!")
 endif
 endif
 
@@ -1343,8 +1342,6 @@ endif
 ifeq ($(USE_SYSTEM_BLAS),1)
 # Since the names don't line up (`BLAS` vs. `OPENBLAS`), manually gate:
 USE_BINARYBUILDER_OPENBLAS := 0
-# Disable BB LIBSUITESPARSE if we're using system BLAS
-USE_BINARYBUILDER_LIBSUITESPARSE := 0
 endif
 
 ifeq ($(USE_SYSTEM_LIBM),1)

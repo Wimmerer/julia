@@ -16,7 +16,7 @@ $(build_datarootdir)/julia/stdlib/$(VERSDIR):
 	mkdir -p $@
 
 JLLS = DSFMT GMP CURL LIBGIT2 LLVM LIBSSH2 LIBUV MBEDTLS MPFR NGHTTP2 \
-       BLASTRAMPOLINE OPENBLAS OPENLIBM P7ZIP PCRE LIBSUITESPARSE ZLIB \
+       BLASTRAMPOLINE OPENBLAS OPENLIBM P7ZIP PCRE ZLIB \
        LLVMUNWIND CSL UNWIND
 
 # Initialize this with JLLs that aren't in deps/Versions.make
@@ -41,10 +41,10 @@ $(foreach jll,$(JLLS),$(eval $(call download-artifacts-toml,$(jll))))
 STDLIBS = Artifacts Base64 CRC32c Dates DelimitedFiles Distributed FileWatching \
           Future InteractiveUtils LazyArtifacts Libdl LibGit2 LinearAlgebra Logging \
           Markdown Mmap Printf Profile Random REPL Serialization SHA \
-          SharedArrays Sockets SparseArrays SuiteSparse Test TOML Unicode UUIDs \
+          SharedArrays Sockets Test TOML Unicode UUIDs \
           $(JLL_NAMES)
 
-STDLIBS_EXT = Pkg Statistics LibCURL DelimitedFiles Downloads ArgTools Tar NetworkOptions SuiteSparse SparseArrays SHA
+STDLIBS_EXT = Pkg LibCURL DelimitedFiles Downloads ArgTools Tar NetworkOptions SHA
 
 $(foreach module, $(STDLIBS_EXT), $(eval $(call stdlib-external,$(module),$(shell echo $(module) | tr a-z A-Z))))
 

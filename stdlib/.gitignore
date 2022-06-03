@@ -1,8 +1,6 @@
 /srccache
 /Pkg-*
 /Pkg
-/Statistics-*
-/Statistics
 /LibCURL-*
 /LibCURL
 /DelimitedFiles-*
@@ -15,10 +13,6 @@
 /Tar
 /NetworkOptions-*
 /NetworkOptions
-/SuiteSparse-*
-/SuiteSparse
-/SparseArrays-*
-/SparseArrays
 /SHA-*
 /SHA
 /*_jll/StdlibArtifacts.toml
